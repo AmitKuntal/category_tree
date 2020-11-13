@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Dashboard from './dashboard';
-import {addRootCategory, addSUBCategory} from './../actions/index'
+import {addRootCategory, addSUBCategory, deleteCategory} from './../actions/index'
 
 const container = connect(
   state=>
@@ -10,7 +10,8 @@ const container = connect(
       }
   , {
       addRootCategory,
-      addSUBCategory
+      addSUBCategory,
+      deleteCategory
   }
 )(Dashboard);
 

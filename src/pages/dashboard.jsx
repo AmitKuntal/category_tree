@@ -10,7 +10,7 @@ export default function Dashboard(props){
           <button onClick={()=>props.addRootCategory({name:categoryName, subCat:[], expend:false})}>Add Category</button>
         </div>
         <div className="App">
-          {props.category.map((item,index)=> <List item={item} key={index + item.name} parent={index.toString()}/>)}
+          {props.category.map((item,index)=> <List item={item} key={index + item.name} parent={index.toString()} addSUBCategory={props.addSUBCategory} deleteCategory={props.deleteCategory}/>)}
         </div>
         </>
     )
