@@ -1,25 +1,211 @@
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './pages/';
 
+
+var data = [{
+  name:"Category1",
+  subCat:[
+    {
+      name:"Subcategory 1",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    },
+    {
+      name:"Subcategory 2",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    },
+    {
+      name:"Subcategory 3",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    }
+  ]
+},
+{
+  name:"Category2",
+  subCat:[
+    {
+      name:"Subcategory 1",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    },
+    {
+      name:"Subcategory 2",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    },
+    {
+      name:"Subcategory 3",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    }
+  ]
+},
+{
+  name:"Category3",
+  subCat:[
+    {
+      name:"Subcategory 1",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    },
+    {
+      name:"Subcategory 2",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    },
+    {
+      name:"Subcategory 3",
+      subCat:[
+        {
+          name:"Sub Sub Category1"
+        },
+        
+        {
+          name:"Sub Sub Category2"
+        },
+        
+        {
+          name:"Sub Sub Category3"
+        },
+        
+        {
+          name:"Sub Sub Category4"
+        }
+      ]
+    }
+  ]
+}
+]
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Dashboard />
+    </>
   );
 }
+
+
 
 export default App;
