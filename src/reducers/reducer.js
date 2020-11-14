@@ -1,11 +1,14 @@
 import {cloneDeep} from 'lodash'
+import { act } from 'react-dom/test-utils'
 
 const iState = {
     category:[],
+    expendAll:false
 } 
 
 
 const reducer = (state = iState, action) =>{
+    console.log(action)
     if(action.type === 'ADD_ROOT_CATEGORY'){
         let updateState = cloneDeep(state)
         updateState.category.push(action.payload)
@@ -40,8 +43,8 @@ const reducer = (state = iState, action) =>{
 
     if(action.type === 'EXPAND_ALL_CATEGORY'){
         let updateState = cloneDeep(state)
-        console.log(action)
-        updateCategory(action.name, action.address, 0, updateState.category)
+        updateState.expendAll = !state.expendAll
+        expendAllCategory(updateState.category, updateState.expendAll)
         return updateState
     }
     return state
@@ -88,6 +91,16 @@ const expendCategory = (flag,address, length, state)=>{
     else{ 
         return expendCategory(flag, address, length+1, state[parseInt(address[length])]["subCat"])
     }
+}
+
+
+const expendAllCategory = (state, flag)=>{  
+   state.forEach(element => {
+       element.expend  = flag
+       if(element.subCat){
+        expendAllCategory(element.subCat, flag)
+       }
+   });
 }
 
 export default reducer;
