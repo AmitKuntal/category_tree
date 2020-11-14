@@ -1,5 +1,6 @@
 import './App.css';
 import Dashboard from './pages/';
+import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 
 var data = [{
@@ -199,6 +200,7 @@ var data = [{
 }
 ]
 function App() {
+ 
   return (
     <>
     <Dashboard />

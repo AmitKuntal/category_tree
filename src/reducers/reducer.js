@@ -23,6 +23,13 @@ const reducer = (state = iState, action) =>{
         deleteCategory(action.address, 0, updateState.category)
         return updateState
     }
+
+    if(action.type === 'EDIT_CATEGORY'){
+        let updateState = cloneDeep(state)
+        console.log(action)
+        updateCategory(action.name, action.address, 0, updateState.category)
+        return updateState
+    }
     return state
 
 }
@@ -45,6 +52,17 @@ const deleteCategory = (address, length, state)=>{
     }
     else{ 
         return deleteCategory(address, length+1, state[parseInt(address[length])]["subCat"])
+    }
+}
+
+
+const updateCategory = (name,address, length, state)=>{  
+    if(length+1 === address.length){
+        state[parseInt(address[length])]["name"]=name
+        return state
+    }
+    else{ 
+        return updateCategory(name, address, length+1, state[parseInt(address[length])]["subCat"])
     }
 }
 

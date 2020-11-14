@@ -58,6 +58,7 @@
   margin-top: 3vw;
   display: flex;
   flex-flow: column;
+  width: auto;
 }
 
 .categories > span{
@@ -69,7 +70,17 @@
 .category{
   border-bottom: 1px solid gray;
   padding: .5vw;
+  display: flex;
+  justify-content: space-between;
+  min-width: 10vw;
 }
+
+.category > button{
+  background-color:#e8e8e8;
+  border: none;
+  margin: 0;
+  outline: none;
+  }
 
 .category-list{
   background-color: rgb(228, 195, 112);
