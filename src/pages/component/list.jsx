@@ -22,7 +22,7 @@ function List(props) {
                 <ContextMenuTrigger id={props.item.name + props.parent}>
                     <div className="category" style={{marginLeft:props.marginLeft}} id={props.parent}>
                         <span>{props.item.name}</span>
-                        <button onClick={()=>setSubCat(!subCat)}>{subCat ? '-' : '+'}</button>
+                        <button onClick={()=>props.expandCategory(!props.item.expend, props.parent)}>{props.item.expend ? '-' : '+'}</button>
                         <AddSubCategory {...props} show={addSubCat} handleClose={handleClose}/> 
                         <UpdateCategory {...props} show={editCat} handleUpdateClose={handleUpdateClose} />
 
@@ -41,7 +41,7 @@ function List(props) {
                 </ContextMenu>
 
             
-                {props.item.subCat  && subCat?
+                {props.item.subCat  && props.item.expend?
                     (props.item.subCat.map((subCat, index) => <List item={subCat} key={index + subCat.name} parent={props.parent + index.toString()} addSUBCategory={props.addSUBCategory} deleteCategory={props.deleteCategory} marginLeft={parseInt(props.marginLeft) +10}/>))
                     : null}
 

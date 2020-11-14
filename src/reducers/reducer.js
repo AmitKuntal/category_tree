@@ -30,6 +30,20 @@ const reducer = (state = iState, action) =>{
         updateCategory(action.name, action.address, 0, updateState.category)
         return updateState
     }
+
+    if(action.type === 'EXPAND_CATEGORY'){
+        let updateState = cloneDeep(state)
+        console.log(action)
+        expendCategory(action.flag, action.address, 0, updateState.category)
+        return updateState
+    }
+
+    if(action.type === 'EXPAND_ALL_CATEGORY'){
+        let updateState = cloneDeep(state)
+        console.log(action)
+        updateCategory(action.name, action.address, 0, updateState.category)
+        return updateState
+    }
     return state
 
 }
@@ -63,6 +77,16 @@ const updateCategory = (name,address, length, state)=>{
     }
     else{ 
         return updateCategory(name, address, length+1, state[parseInt(address[length])]["subCat"])
+    }
+}
+
+const expendCategory = (flag,address, length, state)=>{  
+    if(length+1 === address.length){
+        state[parseInt(address[length])]["expend"]=flag
+        return state
+    }
+    else{ 
+        return expendCategory(flag, address, length+1, state[parseInt(address[length])]["subCat"])
     }
 }
 
